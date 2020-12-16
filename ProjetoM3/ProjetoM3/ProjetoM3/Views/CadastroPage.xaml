@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ProjetoM3.Views.CadastroPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:textInputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms">
+
+    <ContentPage.Content>
+
+        <StackLayout Margin="30,30,30,0">
+
+            <Label
+                Margin="90,0,0,10"
+                FontAttributes="Bold"
+                FontSize="36"
+                Text="Cadastro"
+                TextColor="Black" />
+
+            <textInputLayout:SfTextInputLayout
+                ContainerType="Outlined"
+                FocusedColor="#D9224A"
+                Hint="Email">
+                <Entry x:Name="EntryEmail" FontSize="20" />
+            </textInputLayout:SfTextInputLayout>
+
+            <textInputLayout:SfTextInputLayout
+                ContainerType="Outlined"
+                FocusedColor="#D9224A"
+                Hint="Usuário">
+                <Entry x:Name="EntryLogin" FontSize="20" />
+            </textInputLayout:SfTextInputLayout>
+
+            <textInputLayout:SfTextInputLayout
+                CharMaxLength="8"
+                ContainerType="Outlined"
+                HelperText="Enter 5 to 8 characters"
+                Hint="Senha"
+                ShowCharCount="true">
+                <Entry x:Name="EntrySenha" />
+            </textInputLayout:SfTextInputLayout>
+
+            <StackLayout Margin="0,10" Orientation="Horizontal">
+
+                <CheckBox x:Name="ckPessoaFisica" Color="#CCCCCC" />
+                <Label
+                    Text="Física"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center" />
+
+                <CheckBox
+                    x:Name="ckPessoaJuridica"
+                    HorizontalOptions="EndAndExpand"
+                    Color="#CCCCCC" />
+                <Label
+                    Text="Jurídica"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center" />
+
+            </StackLayout>
+
+            <Button
+                Margin="0,10,0,0"
+                BackgroundColor="#F05454"
+                Clicked="ButtonCadastrar_PagPrincipal"
+                FontAttributes="Bold"
+                FontSize="24"
+                Text="cadastrar"
+                TextColor="White" />
+
+            <StackLayout Orientation="Horizontal">
+
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="24"
+                    Text="&lt;"
+                    TextColor="#D9224A" />
+
+                <Label
+                    FontSize="18"
+                    Text="Voltar"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center">
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped" />
+                    </Label.GestureRecognizers>
+
+                </Label>
+
+
+            </StackLayout>
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

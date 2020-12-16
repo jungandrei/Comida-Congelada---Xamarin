@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ProjetoM3.Views.Sacola"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+
+
+
+        <StackLayout>
+
+            <StackLayout Padding="40,50,292,40">
+
+                <Button
+                    BackgroundColor="White"
+                    BorderColor="Black"
+                    BorderWidth="2"
+                    Clicked="Button_Back2"
+                    CornerRadius="50"
+                    Font="25"
+                    FontAttributes="Bold"
+                    Text="&lt;"
+                    TextColor="Black" />
+
+            </StackLayout>
+
+            <StackLayout Margin="40,-10">
+                <Label Text="SUA SACOLA TEM X ITEM" TextColor="Black" />
+            </StackLayout>
+
+
+            <StackLayout Margin="10" VerticalOptions="EndAndExpand">
+
+                <Label HorizontalOptions="EndAndExpand" Text="Subtotal" />
+
+                <Label
+                    Padding="0,10"
+                    HorizontalOptions="EndAndExpand"
+                    Text="R$ X,XX" />
+
+                <Button
+                    Background="#308340"
+                    CornerRadius="5"
+                    Text="AGENDAR ENTREGA"
+                    TextColor="Black" />
+
+            </StackLayout>
+
+
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

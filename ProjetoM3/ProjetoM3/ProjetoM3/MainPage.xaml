@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ProjetoM3.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms">
+
+    <StackLayout Margin="30,0,30,0">
+
+        <Image Margin="101,20" Source="logo.png" />
+
+        <Label
+            Margin="101,0,0,10"
+            FontAttributes="Bold"
+            FontSize="36"
+            Text="Login"
+            TextColor="Black" />
+
+        <inputLayout:SfTextInputLayout
+            ContainerType="Outlined"
+            FocusedColor="#D9224A"
+            Hint="Usuário">
+            <Entry FontSize="24" />
+        </inputLayout:SfTextInputLayout>
+
+        <inputLayout:SfTextInputLayout
+            CharMaxLength="8"
+            ContainerType="Outlined"
+            HelperText="Enter 5 to 8 characters"
+            Hint="Password"
+            ShowCharCount="true">
+            <Entry />
+        </inputLayout:SfTextInputLayout>
+
+        <Button
+            Margin="0,10,0,0"
+            BackgroundColor="#F05454"
+            FontAttributes="Bold"
+            FontSize="24"
+            Text="Entrar"
+            TextColor="White" />
+
+        <StackLayout Orientation="Horizontal">
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="24"
+                Text="+"
+                TextColor="#D9224A" />
+
+            <Label
+                FontSize="18"
+                Text="Criar conta"
+                TextColor="Black"
+                VerticalTextAlignment="Center" />
+
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

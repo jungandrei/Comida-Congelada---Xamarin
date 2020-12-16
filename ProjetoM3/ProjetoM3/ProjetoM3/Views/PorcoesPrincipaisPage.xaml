@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ProjetoM3.Views.PorcoesPrincipaisPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <StackLayout BackgroundColor="#FF8E71" HeightRequest="150">
+
+                <StackLayout Padding="40,50,292,40">
+
+                    <Button
+                        BackgroundColor="White"
+                        Clicked="Button_Back"
+                        CornerRadius="50"
+                        Font="25"
+                        FontAttributes="Bold"
+                        Text="&lt;"
+                        TextColor="Black" />
+
+                </StackLayout>
+
+            </StackLayout>
+
+            <StackLayout Margin="20">
+
+                <Label Text="PORÇÕES PRINCIPAIS" TextColor="Black" />
+                <Label Text="Uma parte importante do prato, que deve ser nutritiva (feito!), bem preparada (feito) e deliciosa (PERFEITO!)." />
+
+            </StackLayout>
+
+            <ScrollView>
+                <StackLayout>
+
+                    <!--  PRATO 1  -->
+                    <StackLayout Margin="20" Orientation="Horizontal">
+
+                        <BoxView
+                            BackgroundColor="#C4C4C4"
+                            CornerRadius="10"
+                            HeightRequest="100"
+                            WidthRequest="100" />
+
+                        <StackLayout Margin="5,0,0,0" HorizontalOptions="FillAndExpand">
+
+                            <Label Text="Almôdega de carne" TextColor="Black" />
+
+
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+
+                                <Label Text="R$ 10,90" VerticalOptions="CenterAndExpand" />
+
+                                <Button
+                                    BackgroundColor="#308340"
+                                    CornerRadius="50"
+                                    FontSize="20"
+                                    HeightRequest="50"
+                                    HorizontalOptions="EndAndExpand"
+                                    Text="+"
+                                    TextColor="White"
+                                    WidthRequest="50" />
+
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+
+
+                    <!--  PRATO 2  -->
+
+                    <StackLayout Margin="20" Orientation="Horizontal">
+
+                        <BoxView
+                            BackgroundColor="#C4C4C4"
+                            CornerRadius="10"
+                            HeightRequest="100"
+                            WidthRequest="100" />
+
+                        <StackLayout Margin="5,0,0,0" HorizontalOptions="FillAndExpand">
+
+                            <Label Text="Camarão ao Leite de Coco e Curry" TextColor="Black" />
+
+
+                            <StackLayout Orientation="Horizontal">
+
+                                <Label Text="R$ 15,90" VerticalOptions="CenterAndExpand" />
+
+                                <Button
+                                    BackgroundColor="#308340"
+                                    CornerRadius="50"
+                                    FontSize="20"
+                                    HeightRequest="50"
+                                    HorizontalOptions="EndAndExpand"
+                                    Text="+"
+                                    TextColor="White"
+                                    WidthRequest="50" />
+
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <!--  PRATO 3  -->
+
+                    <StackLayout Margin="20" Orientation="Horizontal">
+
+                        <BoxView
+                            BackgroundColor="#C4C4C4"
+                            CornerRadius="10"
+                            HeightRequest="100"
+                            WidthRequest="100" />
+
+                        <StackLayout Margin="5,0,0,0" HorizontalOptions="FillAndExpand">
+
+                            <Label Text="Hambúrguer de Salmão" TextColor="Black" />
+
+
+                            <StackLayout Orientation="Horizontal">
+
+                                <Label Text="R$ 13,90" VerticalOptions="CenterAndExpand" />
+
+                                <Button
+                                    BackgroundColor="#308340"
+                                    CornerRadius="50"
+                                    FontSize="20"
+                                    HeightRequest="50"
+                                    HorizontalOptions="EndAndExpand"
+                                    Text="+"
+                                    TextColor="White"
+                                    WidthRequest="50" />
+
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+
+            <Button
+                Clicked="Button_OnClicked"
+                CornerRadius="10"
+                Text="N Item"
+                TextColor="Black" />
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
