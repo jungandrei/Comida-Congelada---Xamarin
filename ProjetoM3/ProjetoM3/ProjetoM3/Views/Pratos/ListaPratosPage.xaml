@@ -81,7 +81,7 @@
                 ItemSelected="ListView_ItemSelected"
                 IsVisible="{Binding ExisteItemsAgrupados}"
                 SeparatorColor="#696969"
-                BackgroundColor="#228B22">
+                BackgroundColor="LightGray">
                 <ListView.GroupHeaderTemplate>
                     <DataTemplate>
                         <ViewCell 
