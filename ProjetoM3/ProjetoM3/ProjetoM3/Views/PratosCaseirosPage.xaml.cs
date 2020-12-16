@@ -13,7 +13,6 @@ namespace ProjetoM3.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PratosCaseirosPage : ContentPage
     {
-
         private readonly PratosViewModel Contexto;
         public PratosCaseirosPage()
         {
