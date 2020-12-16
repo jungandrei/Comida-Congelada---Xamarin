@@ -43,6 +43,23 @@ namespace ProjetoM3.ViewModel
             AgruparLista();
         }
 
+        public async void ListarPratosPorTipo(string tipoPrato)
+        {
+            var listaTemporaria = await Listar(x => x.Object.TipoPrato == tipoPrato).ConfigureAwait(true);
+
+            // limpo a lista (sem dar null)
+            Items.Clear();
+
+            // e, se existir algum registro, faco ADD
+            if (listaTemporaria != null)
+                foreach (Pratos prato in listaTemporaria)
+                {
+                    Items.Add(prato);
+                }
+            // notifica a alteracao da lista
+            Changed(() => Items);
+        }
+
         private void AgruparLista()
         {
             if (ItemsAgrupados == null)

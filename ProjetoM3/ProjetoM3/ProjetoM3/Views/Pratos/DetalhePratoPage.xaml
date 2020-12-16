@@ -52,6 +52,18 @@
                 Placeholder="{StaticResource DetalhePratoPage_LabelTipoPrato_Placeholder}"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="End"/>
+
+            <Label 
+                Text="{StaticResource DetalhePratoPage_LabelPreco_Text}"
+                Style="{StaticResource LabelStyle}"
+                VerticalOptions="Start" 
+                HorizontalOptions="Start" />
+            <Entry
+                Text="{Binding Item.Preco}"
+                Style="{StaticResource EntryStyleThin}"
+                Placeholder="{StaticResource DetalhePratoPage_LabelPreco_Placeholder}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="End"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

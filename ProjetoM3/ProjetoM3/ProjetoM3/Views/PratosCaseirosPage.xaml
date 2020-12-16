@@ -33,104 +33,55 @@
             <ScrollView>
                 <StackLayout>
 
-                    <!--  PRATO 1  -->
-                    <StackLayout Margin="20" Orientation="Horizontal">
+                    <ListView 
+                        ItemsSource="{Binding Items}"                
+                        ItemSelected="ListView_ItemSelected"
+                        VerticalOptions="FillAndExpand"                       
+                        CachingStrategy="RecycleElement"
+                        HasUnevenRows="true">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Margin="20" Orientation="Horizontal">
 
-                        <BoxView
-                            BackgroundColor="#C4C4C4"
-                            CornerRadius="10"
-                            HeightRequest="100"
-                            WidthRequest="100" />
+                                        <BoxView
+                                            BackgroundColor="#C4C4C4"
+                                            CornerRadius="10"
+                                            HeightRequest="100"
+                                            WidthRequest="100" />
 
-                        <StackLayout Margin="5,0,0,0">
+                                        <StackLayout Margin="5,0,0,0">
 
-                            <Label Text="Frango, arroz integral e brócolis e creme de milho" TextColor="Black" />
+                                            <Label 
+                                                Text="{Binding Nome}" 
+                                                TextColor="Black" />
 
+                                            <StackLayout Orientation="Horizontal">
 
-                            <StackLayout Orientation="Horizontal">
+                                                <Label                        
+                                                    Text="{Binding Preco, StringFormat='R$ {0:F2}'}"
+                                                    VerticalOptions="CenterAndExpand"
+                                                    HorizontalOptions="FillAndExpand"/>
 
-                                <Label Text="R$ 18,90" VerticalOptions="CenterAndExpand" />
+                                                <Button
+                                                    BackgroundColor="#308340"
+                                                    CornerRadius="50"
+                                                    FontSize="20"
+                                                    HeightRequest="50"
+                                                    HorizontalOptions="End"
+                                                    Text="+"
+                                                    TextColor="White"
+                                                    WidthRequest="50" />
 
-                                <Button
-                                    BackgroundColor="#308340"
-                                    CornerRadius="50"
-                                    FontSize="20"
-                                    HeightRequest="50"
-                                    HorizontalOptions="EndAndExpand"
-                                    Text="+"
-                                    TextColor="White"
-                                    WidthRequest="50" />
-
-                            </StackLayout>
-                        </StackLayout>
-                    </StackLayout>
-
-
-                    <!--  PRATO 2  -->
-
-                    <StackLayout Margin="20" Orientation="Horizontal">
-
-                        <BoxView
-                            BackgroundColor="#C4C4C4"
-                            CornerRadius="10"
-                            HeightRequest="100"
-                            WidthRequest="100" />
-
-                        <StackLayout Margin="5,0,0,0">
-
-                            <Label Text="Caneloni de ricota e espinafre com molho de tomate" TextColor="Black" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
 
 
-                            <StackLayout Orientation="Horizontal">
-
-                                <Label Text="R$ 20,90" VerticalOptions="CenterAndExpand" />
-
-                                <Button
-                                    BackgroundColor="#308340"
-                                    CornerRadius="50"
-                                    FontSize="20"
-                                    HeightRequest="50"
-                                    HorizontalOptions="EndAndExpand"
-                                    Text="+"
-                                    TextColor="White"
-                                    WidthRequest="50" />
-
-                            </StackLayout>
-                        </StackLayout>
-                    </StackLayout>
-
-                    <!--  PRATO 3  -->
-
-                    <StackLayout Margin="20" Orientation="Horizontal">
-
-                        <BoxView
-                            BackgroundColor="#C4C4C4"
-                            CornerRadius="10"
-                            HeightRequest="100"
-                            WidthRequest="100" />
-
-                        <StackLayout Margin="5,0,0,0">
-
-                            <Label Text="Lasanha à bolonhesa com massa de palmito pupunha" TextColor="Black" />
-
-
-                            <StackLayout Orientation="Horizontal">
-
-                                <Label Text="R$ 25,90" VerticalOptions="CenterAndExpand" />
-
-                                <Button
-                                    BackgroundColor="#308340"
-                                    CornerRadius="50"
-                                    FontSize="20"
-                                    HeightRequest="50"
-                                    HorizontalOptions="EndAndExpand"
-                                    Text="+"
-                                    TextColor="White"
-                                    WidthRequest="50" />
-
-                            </StackLayout>
-                        </StackLayout>
-                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView> 
 
                 </StackLayout>
             </ScrollView>

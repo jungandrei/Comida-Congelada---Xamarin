@@ -46,6 +46,9 @@ namespace ProjetoM3.Views.Pratos
             this.Add("DetalhePratoPage_LabelTipoPrato_Text", "TIPO DE PRATO");
             this.Add("DetalhePratoPage_LabelTipoPrato_Placeholder", "Ex: caseiro, porcoes, ...");
 
+            this.Add("DetalhePratoPage_LabelPreco_Text", "PREÇO DE PRATO");
+            this.Add("DetalhePratoPage_LabelPreco_Placeholder", "R$ 18,99");
+
         }
 
         public void en()
