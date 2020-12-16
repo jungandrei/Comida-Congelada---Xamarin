@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoM3.Views.Pratos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,16 @@ namespace ProjetoM3.Views
         {
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
+
+            if (App.usuario.Email == "jung.andrei@gmail.com")
+            {
+                // Habilitar o menu de cadastro aqui
+                NovosPratosButton.IsEnabled = true;
+            }
+            else
+            {
+                NovosPratosButton.IsEnabled = false;
+            }
         }
 
         private void TapGestureRecognizer_Pratos(object sender, EventArgs e)
@@ -66,6 +77,11 @@ namespace ProjetoM3.Views
         private void TapGestureRecognizer_PaesLanchesSucos(object sender, EventArgs e)
         {
             Navigation.PushAsync(new PaesLanchesSucosPage());
+        }
+
+        private void ButtonNovosPratos_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ListaPratosPage());
         }
     }
 }

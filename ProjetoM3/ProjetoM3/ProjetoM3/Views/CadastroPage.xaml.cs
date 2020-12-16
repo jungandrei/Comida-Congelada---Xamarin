@@ -28,9 +28,9 @@ namespace ProjetoM3.Views
             // aqui, adicionamos o usuario, vamos fazer sem validacoes para ser rapido
 
             if (await UsuarioViewModel.CreateUsuarioViewModel().NovoUsuario(EntryEmail.Text, EntryLogin.Text,
-                EntrySenha.Text, ckPessoaFisica.IsChecked, ckPessoaJuridica.IsChecked).ConfiguraAwait(true))
+                EntrySenha.Text, ckPessoaFisica.IsChecked, ckPessoaJuridica.IsChecked).ConfigureAwait(true))
             {
-                App.Current.MainPage = new PrincipalPage();
+                App.Current.MainPage = new NavigationPage(new PrincipalPage());
             }
         }
     }

@@ -56,5 +56,10 @@ namespace ProjetoM3.Model
         [JsonProperty("ti")]
         public string Titulo { get => _Titulo; set => Set(ref _Titulo, value); }
 
+        [JsonIgnore] private string _TipoPrato;
+
+        [JsonProperty("tp")]
+        public string TipoPrato { get => _TipoPrato; set => Set(ref _TipoPrato, value); }
+
     }
 }

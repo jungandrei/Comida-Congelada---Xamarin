@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:converter="clr-namespace:Unipon.Engine.Views.Converters;assembly=Unipon"
+    x:Class="ProjetoM3.Views.Pratos.ListaPratosPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary Source="I18n.xaml">
+            <converter:BoolOpostoConverter x:Key="boolOpostoConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label        
+                x:Name="TitleViewLabel"
+                Text="{StaticResource ListaPratosPage_Titulo}"
+                Style="{StaticResource NavigationPageTitleStyle}">
+            </Label>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="ToolbarItemPesquisa_Clicked" Text="Pesquisar"/>
+        <ToolbarItem Clicked="ToolBarItemNovo_Clicked" Text="Novo"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame
+                Padding="0"
+                x:Name="FramePesquisa"
+                IsVisible="False"
+                BackgroundColor="Blue">
+                <SearchBar
+                    x:Name="SearchBar_Pesquisa"
+                    SearchCommand="{Binding PesquisarCommand}"
+                    SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar_Pesquisa}}"
+                    BackgroundColor="Transparent"
+                    Placeholder="{StaticResource ListaPratosPage_SearchBar_Placeholder}"
+                    CancelButtonColor="#2F2B28"
+                    PlaceholderColor="#2F2B28"
+                    TextColor="#2F2B28"
+                    TextTransform="Lowercase"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"
+                    FontSize="Small"
+                    FontAttributes="Italic"
+                    TextChanged="SearchBar_Pesquisa_TextChanged"
+                    VerticalOptions="Center"
+                    HeightRequest="30"
+                    WidthRequest="150"/>
+            </Frame>
+
+            <Frame                    
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                BackgroundColor="Transparent"
+                IsVisible="{Binding ExisteItemsAgrupados, Converter={StaticResource boolOpostoConverter}}">
+                <StackLayout>
+                    <Label
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource LabelStyleThin}"
+                        HorizontalTextAlignment="Center"
+                        Text="{StaticResource ListaPratosPage_ListView_Text}"/>                    
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ToolBarItemNovo_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <ListView                    
+                ItemsSource="{Binding ItemsAgrupados}"
+                IsGroupingEnabled="True"      
+                GroupDisplayBinding="{Binding Key}"
+                VerticalOptions="FillAndExpand"
+                CachingStrategy="RecycleElement"
+                HasUnevenRows="True"
+                ItemSelected="ListView_ItemSelected"
+                IsVisible="{Binding ExisteItemsAgrupados}"
+                SeparatorColor="#696969"
+                BackgroundColor="#228B22">
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell 
+                            Height="30">
+                            <StackLayout 
+                                Orientation="Horizontal"
+                                BackgroundColor="#88CEFA"
+                                VerticalOptions="FillAndExpand">
+                                <Label 
+                                    Padding="5"
+                                    Text="{Binding Key}"
+                                    Style="{StaticResource LabelStyle}"
+                                    TextColor="White" 
+                                    VerticalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35"/>
+                                </Grid.RowDefinitions>
+                                <Label
+                                    Padding="5"
+                                    Text="{Binding Nome}"
+                                    Style="{DynamicResource LabelListaTituloStyle}"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Center"/>
+                                <Label
+                                    Padding="5"
+                                    Text="{Binding TipoPrato}"
+                                    Style="{DynamicResource LabelListaTituloStyle}"
+                                    HorizontalOptions="End"
+                                    VerticalOptions="Center"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjetoM3.Views.Pratos.DetalhePratoPage">
+    <ContentPage.Resources>
+        <ResourceDictionary Source="I18n.xaml"/>
+    </ContentPage.Resources>
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label        
+                x:Name="TitleViewLabel"
+                Style="{StaticResource NavigationPageTitleStyle}"
+                FontSize="Micro">
+            </Label>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            x:Name="ToolbarItemRemover"
+            Clicked="ToolbarItemRemover_Clicked"
+            Text="Remover"/>
+        <ToolbarItem 
+            Clicked="ToolbarItemSalvar_Clicked" 
+            Text="Salvar"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout
+            Padding="5">
+            <Label 
+                Text="{StaticResource DetalhePratoPage_LabelNome_Text}"
+                Style="{StaticResource LabelStyle}"
+                VerticalOptions="Start" 
+                HorizontalOptions="Start" />
+            <Entry
+                Text="{Binding Item.Nome}"
+                Style="{StaticResource EntryStyleThin}"
+                Placeholder="{StaticResource DetalhePratoPage_EntryNome_Placeholder}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="End"/>
+
+            <Label 
+                Text="{StaticResource DetalhePratoPage_LabelTipoPrato_Text}"
+                Style="{StaticResource LabelStyle}"
+                VerticalOptions="Start" 
+                HorizontalOptions="Start" />
+            <Entry
+                Text="{Binding Item.TipoPrato}"
+                Style="{StaticResource EntryStyleThin}"
+                Placeholder="{StaticResource DetalhePratoPage_LabelTipoPrato_Placeholder}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

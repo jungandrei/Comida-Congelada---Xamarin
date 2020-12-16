@@ -25,7 +25,7 @@ namespace ProjetoM3.ViewModel
         public async Task<bool> NovoUsuario(string email, string login, string senha, bool ehPF, bool ehPJ)
         {
             // verifica se ja nao existe outro
-            Usuario existente = await Obter(x => x.Object.Login == email.ToLower() && x.Object.Senha == senha).ConfigureAwait(true);
+            Usuario existente = await Obter(x => x.Object.Email == email.ToLower() && x.Object.Senha == senha).ConfigureAwait(true);
 
             if (existente == null)
             {
@@ -56,13 +56,14 @@ namespace ProjetoM3.ViewModel
 
         public async Task<bool> Login(string email, string senha)
         {
-            Usuario logando = await Obter(x => x.Object.Login == email.ToLower() && x.Object.Senha == senha).ConfigureAwait(true);
+            Usuario logando = await Obter(x => x.Object.Email == email.ToLower() && x.Object.Senha == senha).ConfigureAwait(true);
 
-            if (logando != null && string.IsNullOrEmpty(logando.Chave))
-            {
-                App.usuario = logando;
-                return true;
-            }
+            if (logando != null) 
+                if (string.IsNullOrEmpty(logando.Chave) == false)
+                {
+                    App.usuario = logando;
+                    return true;
+                }
             return false;
         }
     }
