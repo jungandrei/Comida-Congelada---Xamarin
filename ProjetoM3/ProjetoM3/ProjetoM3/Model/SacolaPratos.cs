@@ -5,7 +5,7 @@ using Unipon.Engine.Model;
 
 namespace ProjetoM3.Model
 {
-    public class Sacola : BaseModel, IInterfaceBasica
+    public class SacolaPratos : BaseModel, IInterfaceBasica
     {
         #region Estrutura padrão (obrigatorio)
         [JsonIgnore]
@@ -26,6 +26,5 @@ namespace ProjetoM3.Model
         [JsonProperty("da")]
         public DateTime DataAtualizacao { get => _DataAtualizacao; set => Set(ref _DataAtualizacao, value); }
         #endregion
-
     }
 }

@@ -19,7 +19,7 @@ namespace ProjetoM3.ViewModel
             // ModoObservacao.SomenteLocal  grava os dados apenas no celular, sem enviar para o firebase
             // ModoObservacao.SomenteRemoto grava os dados apenas no firebase
 
-            return new UsuarioViewModel(NomeNodoFirebase, ModoObservacao.RemotoELocal, NomeArquivoFirebase, ParentChild);
+            return new UsuarioViewModel(NomeNodoFirebase, ModoObservacao.Nenhum, NomeArquivoFirebase, ParentChild);
         }
         
         public async Task<bool> NovoUsuario(string email, string login, string senha, bool ehPF, bool ehPJ)
